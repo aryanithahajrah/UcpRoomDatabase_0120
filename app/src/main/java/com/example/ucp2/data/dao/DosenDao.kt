@@ -9,10 +9,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface DosenDao {
     @Query("select * from dosen ORDER BY nama ASC")
-    fun getAllDosen() : Flow<List<Dosen>>
+    fun getAllDosen(): Flow<List<Dosen>>
 
     @Query("select * from dosen WHERE nidn = :nidn")
-    fun getDosen(nidn: String) : Flow<Dosen>
+    fun getDosen(nidn: String): Flow<Dosen>
 
     @Insert
     suspend fun insertDosen(dosen: Dosen)
